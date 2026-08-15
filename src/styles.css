@@ -1,0 +1,1837 @@
+/* =========================================================
+   CV INSTAN — FULL STYLES
+   App UI  : Modern dark interface
+   CV      : Classic professional / ATS-friendly
+========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+========================================================= */
+
+:root {
+  /* Application */
+  --app-bg: #0b0f1a;
+  --app-panel: #0f172a;
+  --app-panel-2: #111827;
+  --app-panel-3: #0b1220;
+
+  --app-line: #1f2937;
+  --app-line-light: #334155;
+
+  --app-text: #f8fafc;
+  --app-muted: #94a3b8;
+
+  --primary: #6d28d9;
+  --primary-hover: #7c3aed;
+  --danger: #dc2626;
+
+  /* CV */
+  --cv-paper: #ffffff;
+  --cv-ink: #111111;
+  --cv-muted: #666666;
+  --cv-muted-light: #777777;
+  --cv-rule: #111111;
+
+  /* A4 */
+  --a4-width: 794px;
+  --a4-height: 1123px;
+}
+
+
+/* =========================================================
+   2. RESET & GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+  color: var(--app-text);
+
+  background:
+    radial-gradient(
+      80% 60% at 20% 10%,
+      rgba(109, 40, 217, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      70% 50% at 100% 0,
+      rgba(14, 116, 144, 0.12),
+      transparent 55%
+    ),
+    var(--app-bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   3. MAIN APPLICATION
+========================================================= */
+
+.page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   4. TOPBAR
+========================================================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 12px 20px;
+
+  border-bottom: 1px solid var(--app-line);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.97),
+      rgba(15, 23, 42, 0.91)
+    );
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.01em;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   5. GENERAL FORM CONTROLS
+========================================================= */
+
+select {
+  min-height: 36px;
+
+  padding: 7px 10px;
+
+  border: 1px solid var(--app-line);
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #e5e7eb;
+  background: var(--app-panel);
+}
+
+select:focus {
+  border-color: #64748b;
+}
+
+.btn {
+  border: 0;
+
+  font: inherit;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn.pill {
+  padding: 0.55rem 0.9rem;
+
+  border: 1px solid var(--app-line);
+  border-radius: 999px;
+
+  color: #e5e7eb;
+  background: var(--app-panel);
+}
+
+.btn.pill:hover {
+  border-color: #475569;
+
+  background: #172033;
+
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  color: #ffffff;
+
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.btn.primary:hover {
+  border-color: var(--primary-hover);
+  background: var(--primary-hover);
+}
+
+
+/* =========================================================
+   6. EDITOR + PREVIEW LAYOUT
+========================================================= */
+
+.layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(340px, 540px)
+    minmax(0, 1fr);
+
+  align-items: start;
+
+  gap: 24px;
+
+  padding: 24px;
+}
+
+.left {
+  min-width: 0;
+}
+
+.right {
+  min-width: 0;
+
+  overflow-x: auto;
+
+  padding-bottom: 30px;
+}
+
+
+/* =========================================================
+   7. FORM CARD
+========================================================= */
+
+.card {
+  overflow: hidden;
+
+  border: 1px solid var(--app-line);
+  border-radius: 14px;
+
+  background: var(--app-panel-2);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.form-title {
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   8. FORM GRID
+========================================================= */
+
+.grid-2 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.grid-3 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   9. FORM SECTION / DYNAMIC BLOCK
+========================================================= */
+
+.block {
+  position: relative;
+
+  margin: 10px 0 14px;
+  padding: 14px;
+
+  border: 1px dashed #334155;
+  border-radius: 10px;
+
+  background:
+    rgba(15, 23, 42, 0.34);
+}
+
+.block:hover {
+  border-color: #475569;
+}
+
+.subhead {
+  margin: 20px 0 8px;
+
+  color: #dbe4f0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* Section title editor */
+
+.section-editor {
+  margin-bottom: 12px;
+
+  padding: 12px;
+
+  border: 1px solid #293548;
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.section-editor label {
+  color: #cbd5e1;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   10. LABEL / INPUT / TEXTAREA
+========================================================= */
+
+label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--app-muted);
+
+  font-size: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--app-line);
+  border-radius: 9px;
+
+  outline: none;
+
+  color: #e5e7eb;
+  background: var(--app-panel-3);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 82px;
+
+  resize: vertical;
+
+  line-height: 1.45;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #64748b;
+
+  box-shadow:
+    0 0 0 2px rgba(100, 116, 139, 0.12);
+}
+
+
+/* =========================================================
+   11. DYNAMIC ITEM BUTTONS
+========================================================= */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+.add-btn,
+.remove-btn,
+.add-bullet-btn,
+.remove-bullet-btn {
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-btn,
+.add-bullet-btn {
+  padding: 8px 12px;
+
+  border: 1px solid #4c1d95;
+
+  color: #ddd6fe;
+  background: rgba(109, 40, 217, 0.12);
+}
+
+.add-btn:hover,
+.add-bullet-btn:hover {
+  background: rgba(109, 40, 217, 0.23);
+
+  transform: translateY(-1px);
+}
+
+.remove-btn,
+.remove-bullet-btn {
+  padding: 7px 10px;
+
+  border: 1px solid #7f1d1d;
+
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.remove-btn:hover,
+.remove-bullet-btn:hover {
+  background: rgba(220, 38, 38, 0.17);
+}
+
+
+/* Bullet editor */
+
+.bullet-editor {
+  display: grid;
+
+  gap: 7px;
+
+  margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   12. OPTIONAL SECTION TOGGLE
+========================================================= */
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin: 10px 0 14px;
+  padding: 12px 14px;
+
+  border: 1px solid var(--app-line);
+  border-radius: 10px;
+
+  background: rgba(15, 23, 42, 0.46);
+}
+
+.toggle-row span {
+  color: #cbd5e1;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.toggle-row input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: var(--primary);
+}
+
+
+/* =========================================================
+   13. CV PAPER — A4
+========================================================= */
+
+.cv.a4 {
+  width: var(--a4-width);
+  min-height: var(--a4-height);
+
+  margin: 0 auto;
+
+  overflow: visible;
+
+  color: var(--cv-ink);
+  background: var(--cv-paper);
+
+  border-radius: 0;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.34);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10.8px;
+  line-height: 1.18;
+}
+
+.cv-inner {
+  width: 100%;
+  min-height: var(--a4-height);
+
+  margin: 0;
+
+  padding:
+    11mm
+    13mm
+    13mm;
+
+  border: 0;
+
+  color: var(--cv-ink);
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   14. CV HEADER
+========================================================= */
+
+.cv-head,
+.cv-header {
+  display: block;
+
+  margin-bottom: 7px;
+
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-nameBlock {
+  line-height: 1.05;
+}
+
+.cv-name {
+  margin: 0 0 4px;
+
+  color: #000000;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 25px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+
+  text-transform: uppercase;
+}
+
+.cv-role {
+  margin-top: 2px;
+
+  color: #111111;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10.9px;
+  font-weight: 700;
+  font-style: italic;
+
+  line-height: 1.15;
+}
+
+
+/* Contact */
+
+.cv-contact,
+.cv-contact-line {
+  margin-top: 3px;
+
+  color: #333333;
+
+  font-size: 9.2px;
+  line-height: 1.2;
+
+  text-align: left;
+
+  overflow-wrap: anywhere;
+}
+
+.cv-location {
+  margin-top: 1px;
+
+  color: #555555;
+
+  font-size: 9.4px;
+  line-height: 1.18;
+}
+
+
+/* Summary */
+
+.cv-summary,
+.cv-summary-top {
+  margin: 4px 0 6px;
+
+  color: #111111;
+
+  font-size: 10.2px;
+  line-height: 1.17;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   15. CV SECTION
+========================================================= */
+
+.cv-section {
+  margin-top: 7px;
+
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+.cv-section-title {
+  margin:
+    6px 0
+    5px;
+
+  padding: 0 0 2px;
+
+  border-bottom: 1.6px solid var(--cv-rule);
+
+  color: #000000;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+
+/*
+  Support struktur lama:
+  <div class="cv-section-title">
+    <h3>...</h3>
+    <div class="rule"></div>
+  </div>
+*/
+
+div.cv-section-title {
+  border-bottom: none;
+}
+
+.cv-section-title h3 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.05;
+}
+
+.cv-section-title .rule {
+  width: 100%;
+  height: 1.6px;
+
+  margin-top: 2px;
+
+  border: 0;
+
+  background: var(--cv-rule);
+}
+
+
+/* =========================================================
+   16. GENERIC CV ENTRY
+========================================================= */
+
+.cv-list {
+  display: grid;
+
+  gap: 5px;
+}
+
+.cv-entry,
+.cv-item,
+.cv-group {
+  margin-bottom: 5px;
+}
+
+.cv-entry,
+.cv-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-entry-top,
+.cv-item-head {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: baseline;
+
+  gap: 12px;
+
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+
+/* =========================================================
+   17. UNIVERSITY / COMPANY / ORGANIZATION
+========================================================= */
+
+.cv-mainline {
+  min-width: 0;
+
+  color: #111111;
+
+  font-size: 11.4px;
+  line-height: 1.14;
+}
+
+
+/*
+   Nama universitas/perusahaan/organisasi
+   sengaja lebih besar daripada body.
+*/
+
+.cv-main-strong {
+  color: #111111;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 11.8px;
+  font-weight: 700;
+
+  line-height: 1.14;
+}
+
+
+/*
+   Contoh:
+   Jakarta, Indonesia
+   Bekasi, Indonesia
+
+   Tetap abu-abu seperti referensi,
+   tapi dibuat cukup gelap supaya terbaca.
+*/
+
+.cv-muted-strong {
+  margin-left: 6px;
+
+  color: #696969;
+
+  font-size: 11.3px;
+  font-weight: 700;
+
+  line-height: 1.14;
+}
+
+
+/* Period */
+
+.cv-period,
+.cv-item-period {
+  color: #222222;
+
+  font-size: 10.5px;
+  font-weight: 400;
+
+  line-height: 1.14;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   18. EDUCATION
+========================================================= */
+
+.cv-education-degree,
+.cv-subline {
+  margin-top: 2px;
+
+  color: #111111;
+
+  font-size: 10.8px;
+  font-weight: 400;
+
+  line-height: 1.16;
+}
+
+.cv-coursework {
+  margin-top: 2px;
+
+  color: #111111;
+
+  font-size: 10.4px;
+  line-height: 1.16;
+}
+
+
+/* =========================================================
+   19. COMPANY / ORGANIZATION DESCRIPTION
+========================================================= */
+
+/*
+   Digunakan untuk deskripsi singkat perusahaan atau organisasi.
+
+   Dibuat abu-abu seperti referensi,
+   tetapi tidak terlalu pudar.
+*/
+
+.cv-description {
+  margin:
+    2px 0
+    4px;
+
+  color: #686868;
+
+  font-size: 10px;
+  font-weight: 400;
+
+  line-height: 1.18;
+}
+
+
+/* =========================================================
+   20. ROLE / POSITION
+========================================================= */
+
+.cv-subentry {
+  margin-top: 5px;
+
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.cv-item-role {
+  color: #111111;
+
+  font-size: 10.8px;
+  font-weight: 700;
+
+  line-height: 1.14;
+}
+
+.cv-subentry .cv-role,
+.cv-item-sub,
+.cv-item-company {
+  margin-top: 1px;
+
+  color: #111111;
+
+  font-size: 10.5px;
+  font-weight: 700;
+  font-style: italic;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   21. CV BULLETS
+========================================================= */
+
+.cv-bullets {
+  margin:
+    2px 0
+    0 13px;
+
+  padding-left: 8px;
+
+  color: #111111;
+
+  font-size: 10.35px;
+  line-height: 1.16;
+}
+
+.cv-bullets li {
+  margin: 1px 0;
+
+  padding-left: 1px;
+}
+
+
+/* =========================================================
+   22. TECHNICAL SKILLS & CERTIFICATIONS
+========================================================= */
+
+.cv-subheading {
+  margin:
+    5px 0
+    2px;
+
+  color: #111111;
+
+  font-size: 10.6px;
+  font-weight: 700;
+  font-style: italic;
+
+  line-height: 1.15;
+}
+
+.cv-skills {
+  color: #111111;
+
+  font-size: 10.3px;
+  line-height: 1.17;
+}
+
+.cv-skill-row {
+  margin-bottom: 1px;
+}
+
+.cv-skill-label {
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   23. SELECTED TECHNICAL PROJECTS
+========================================================= */
+
+.cv-project-title {
+  color: #111111;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.14;
+}
+
+.cv-techline,
+.cv-project-tech {
+  margin:
+    1px 0
+    2px;
+
+  color: #6a6a6a;
+
+  font-size: 9.8px;
+  font-weight: 400;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   24. ORGANIZATIONAL EXPERIENCE
+========================================================= */
+
+.cv-organization-name {
+  color: #111111;
+
+  font-size: 11.8px;
+  font-weight: 700;
+
+  line-height: 1.14;
+}
+
+.cv-organization-description {
+  margin:
+    2px 0
+    4px;
+
+  color: #686868;
+
+  font-size: 10px;
+  line-height: 1.18;
+}
+
+
+/* =========================================================
+   25. PAGE BREAK
+========================================================= */
+
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+
+/* =========================================================
+   26. PRINT / PDF
+========================================================= */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #111111 !important;
+    background: #ffffff !important;
+  }
+
+  .topbar,
+  .left {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+
+    width: 210mm;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .right {
+    overflow: visible;
+  }
+
+  .cv.a4 {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    background: #ffffff;
+  }
+
+  .cv-inner {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0;
+
+    padding:
+      11mm
+      13mm
+      13mm;
+
+    border: 0;
+  }
+
+  .cv-entry,
+  .cv-item,
+  .cv-subentry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
+/* =========================================================
+   27. TABLET
+========================================================= */
+
+@media (max-width: 1250px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    max-width: 760px;
+
+    width: 100%;
+
+    margin-inline: auto;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .cv.a4 {
+    margin-inline: auto;
+  }
+}
+
+
+/* =========================================================
+   28. MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 12px 14px;
+  }
+
+  .right-controls {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .layout {
+    gap: 16px;
+
+    padding: 14px;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+     Preview tetap ukuran A4.
+     User bisa horizontal scroll.
+     Jangan diperkecil karena bisa merusak PDF.
+  */
+
+  .right {
+    overflow-x: auto;
+  }
+}
+
+
+/* =========================================================
+   29. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 16px;
+  }
+
+  .right-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .lang {
+    justify-content: space-between;
+  }
+
+  .lang select {
+    flex: 1;
+  }
+
+  .btn.primary {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 14px;
+  }
+}
+
+/* =========================================================
+   STICKY LIVE PREVIEW
+========================================================= */
+/* =========================================================
+   STICKY LIVE PREVIEW
+========================================================= */
+
+.right {
+  min-width: 0;
+
+  position: sticky;
+  top: 88px;
+
+  align-self: start;
+
+  height: calc(100vh - 110px);
+}
+
+
+/* =========================================================
+   PREVIEW PANEL
+========================================================= */
+
+.preview-panel {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(100, 116, 139, 0.25);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(8, 15, 27, 0.98),
+      rgba(10, 18, 32, 0.96)
+    );
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   PREVIEW TOOLBAR
+========================================================= */
+
+.preview-toolbar {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 11px 16px;
+
+  border-bottom: 1px solid #1f2937;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 92, 255, 0.13),
+      rgba(34, 211, 238, 0.04)
+    );
+}
+
+.preview-toolbar > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.preview-toolbar strong {
+  color: #f8fafc;
+
+  font-size: 13px;
+}
+
+.preview-toolbar span {
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+.preview-badge {
+  padding: 5px 9px;
+
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 999px;
+
+  color: #ddd6fe !important;
+
+  background: rgba(109, 40, 217, 0.14);
+}
+
+
+/* =========================================================
+   PREVIEW SCROLL AREA
+========================================================= */
+
+.preview-scroll {
+  flex: 1;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  padding: 28px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(124, 92, 255, 0.05),
+      transparent 45%
+    );
+}
+
+
+/* Chrome, Edge, Safari */
+
+.preview-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.preview-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb {
+  background: #475569;
+
+  border-radius: 999px;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =========================================================
+   CV INSIDE PREVIEW
+========================================================= */
+
+.preview-scroll .cv.a4 {
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   PROTECT CV CONTENT FROM OVERFLOW
+========================================================= */
+
+.cv.a4,
+.cv-inner,
+.cv-page {
+  max-width: 100%;
+}
+
+.cv-inner {
+  overflow: hidden;
+}
+
+
+/*
+   Mencegah tulisan panjang menembus keluar kertas.
+*/
+
+.cv-inner p,
+.cv-inner li,
+.cv-inner span,
+.cv-inner div,
+.cv-inner h1,
+.cv-inner h2,
+.cv-inner h3,
+.cv-inner h4 {
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  white-space: normal;
+}
+
+
+/* URL panjang juga wajib turun baris */
+
+.cv-contact-line,
+.cv-techline,
+.cv-description {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   SAFE SPACE AT TOP AND BOTTOM OF CV
+========================================================= */
+
+.cv-inner {
+  padding:
+    14mm
+    14mm
+    18mm;
+}
+
+
+/*
+   Section jangan menempel langsung
+   ke batas bawah halaman.
+*/
+
+.cv-section {
+  margin-top: 9px;
+  margin-bottom: 7px;
+}
+
+
+/*
+   Judul section jangan terpisah
+   sendirian dari konten sesudahnya.
+*/
+
+.cv-section-title {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+
+/*
+   Item kecil sebisa mungkin
+   tidak dipotong di tengah.
+*/
+
+.cv-entry,
+.cv-subentry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1250px) {
+  .right {
+    position: static;
+
+    height: auto;
+  }
+
+  .preview-panel {
+    height: auto;
+  }
+
+  .preview-scroll {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+}
+
+/* =========================================================
+   MODERN UI COLOR REFRESH
+========================================================= */
+
+:root {
+  --app-bg: #070b14;
+  --app-panel: #101827;
+  --app-panel-2: #121c2f;
+  --app-panel-3: #0c1424;
+
+  --app-line: #26344d;
+  --app-line-light: #354662;
+
+  --app-text: #f8fafc;
+  --app-muted: #91a3bc;
+
+  --primary: #7c5cff;
+  --primary-hover: #8b6cff;
+  --accent: #22d3ee;
+}
+
+
+/* Background utama */
+
+body {
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(124, 92, 255, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(34, 211, 238, 0.10),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #080c17 0%,
+      #0b1020 45%,
+      #07111c 100%
+    );
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 18, 34, 0.97),
+      rgba(16, 24, 46, 0.97)
+    );
+
+  box-shadow:
+    0 5px 25px rgba(0, 0, 0, 0.18);
+}
+
+.brand {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   FORM PANEL
+========================================================= */
+
+.left .card {
+  border: 1px solid rgba(121, 144, 180, 0.18);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 28, 47, 0.97),
+      rgba(13, 21, 36, 0.98)
+    );
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   FORM TITLE
+========================================================= */
+
+.form-title {
+  color: #ffffff;
+
+  font-size: 19px;
+}
+
+.form-title::after {
+  width: 52px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c5cff,
+      #22d3ee
+    );
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.subhead {
+  color: #f8fafc;
+
+  border-left: 3px solid #7c5cff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(124, 92, 255, 0.16),
+      rgba(34, 211, 238, 0.03),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   SECTION EDITOR
+========================================================= */
+
+.section-editor {
+  border: 1px solid rgba(100, 116, 139, 0.28);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 28, 48, 0.96),
+      rgba(12, 20, 35, 0.96)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   FORM BLOCK
+========================================================= */
+
+.block {
+  border: 1px solid rgba(78, 97, 126, 0.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12, 21, 37, 0.82),
+      rgba(14, 23, 40, 0.68)
+    );
+}
+
+.block:hover {
+  border-color: rgba(124, 92, 255, 0.5);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+input,
+textarea,
+select {
+  color: #eef2ff;
+
+  border: 1px solid #273650;
+
+  background:
+    rgba(7, 14, 27, 0.82);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #3b4e70;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #7c5cff;
+
+  box-shadow:
+    0 0 0 3px rgba(124, 92, 255, 0.12);
+}
+
+label {
+  color: #9fb0c8;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.btn.primary {
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #805cff,
+      #6d37e8
+    );
+
+  box-shadow:
+    0 8px 22px rgba(109, 55, 232, 0.28);
+}
+
+.btn.primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #906cff,
+      #7848ee
+    );
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-btn,
+.add-bullet-btn {
+  color: #ddd6fe;
+
+  border-color: rgba(124, 92, 255, 0.55);
+
+  background:
+    rgba(124, 92, 255, 0.10);
+}
+
+.add-btn:hover,
+.add-bullet-btn:hover {
+  border-color: #7c5cff;
+
+  background:
+    rgba(124, 92, 255, 0.20);
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+========================================================= */
+
+.remove-btn,
+.remove-bullet-btn {
+  color: #fda4af;
+
+  border-color: rgba(244, 63, 94, 0.42);
+
+  background:
+    rgba(244, 63, 94, 0.07);
+}
+
+.remove-btn:hover,
+.remove-bullet-btn:hover {
+  background:
+    rgba(244, 63, 94, 0.15);
+}
+
+
+/* =========================================================
+   PREVIEW PANEL
+========================================================= */
+
+.preview-panel {
+  border: 1px solid rgba(110, 128, 161, 0.22);
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(10, 17, 30, 0.98),
+      rgba(8, 16, 28, 0.96)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.26);
+}
+
+.preview-toolbar {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(124, 92, 255, 0.13),
+      rgba(34, 211, 238, 0.04)
+    );
+}
+
+.preview-toolbar strong {
+  color: #ffffff;
+}
+
+.preview-badge {
+  color: #e9e3ff !important;
+
+  border-color: rgba(124, 92, 255, 0.5);
+
+  background:
+    rgba(124, 92, 255, 0.15);
+}
