@@ -337,7 +337,7 @@ export default function Preview({ data, t }) {
 
       {isSectionVisible("projects") &&
         data.projects?.length > 0 && (
-          <section className="cv-section">
+          <section className="cv-section cv-projects-section">
             <h2 className="cv-section-title">
               {getSectionTitle(
                 "projects",
@@ -350,7 +350,7 @@ export default function Preview({ data, t }) {
               (project, index) => (
                 <div
                   key={index}
-                  className="cv-entry"
+                  className="cv-entry cv-project-entry"
                 >
                   <div className="cv-entry-top">
                     <div className="cv-project-title">

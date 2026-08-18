@@ -615,7 +615,7 @@ textarea:focus {
     Times,
     serif;
 
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 700;
 
   line-height: 1;
@@ -711,7 +711,7 @@ textarea:focus {
     Times,
     serif;
 
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 
   line-height: 1.05;
@@ -822,7 +822,7 @@ div.cv-section-title {
     Times,
     serif;
 
-  font-size: 11.8px;
+  font-size: 12.8px;
   font-weight: 700;
 
   line-height: 1.14;
@@ -856,7 +856,7 @@ div.cv-section-title {
 .cv-item-period {
   color: #222222;
 
-  font-size: 10.5px;
+  font-size: 11.5px;
   font-weight: 400;
 
   line-height: 1.14;
@@ -1016,7 +1016,7 @@ div.cv-section-title {
 .cv-project-title {
   color: #111111;
 
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
 
   line-height: 1.14;
@@ -1834,4 +1834,46 @@ label {
 
   background:
     rgba(124, 92, 255, 0.15);
+}
+
+/* =========================================================
+   PROJECT PAGE BREAK FIX
+   Prevents unnecessary blank space before Projects
+========================================================= */
+
+/* Projects section boleh menggunakan sisa halaman */
+.cv-projects-section {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+/* Satu project tidak lagi dipaksa menjadi blok utuh */
+.cv-project-entry {
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+}
+
+/* Daftar bullet boleh berlanjut ke halaman berikutnya */
+.cv-project-entry .cv-bullets {
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+/* Tetapi satu bullet jangan dipotong di tengah */
+.cv-project-entry .cv-bullets li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Judul project jangan terpisah dari isi awal project */
+.cv-project-entry .cv-entry-top {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* Tech stack tetap bersama judul / isi awal */
+.cv-project-entry .cv-techline,
+.cv-project-entry .cv-project-tech {
+  break-after: avoid;
+  page-break-after: avoid;
 }
